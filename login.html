@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>تسجيل الدخول - واصل</title>
+    <style>
+        .auth-container { max-width: 400px; margin: 50px auto; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #222; border: 1px solid #333; color: white; border-radius: 5px; }
+        .toggle-btn { color: var(--gold); cursor: pointer; text-decoration: underline; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="main-frame">
+        <div class="auth-container">
+            <h2 id="authTitle" style="color:var(--gold)">تسجيل الدخول</h2>
+            <form id="authForm">
+                <div id="registerFields" style="display:none;">
+                    <input type="text" placeholder="الاسم بالكامل">
+                </div>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit" class="book-btn">تأكيد</button>
+            </form>
+            <p style="margin-top:20px;">
+                <span id="toggleText">ليس لديك حساب؟</span> 
+                <span class="toggle-btn" onclick="toggleAuth()">اضغط هنا</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAuth() {
+            const title = document.getElementById('authTitle');
+            const regFields = document.getElementById('registerFields');
+            const toggleText = document.getElementById('toggleText');
+            
+            if (regFields.style.display === 'none') {
+                title.innerText = 'إنشاء حساب جديد';
+                regFields.style.display = 'block';
+                toggleText.innerText = 'لديك حساب بالفعل؟';
+            } else {
+                title.innerText = 'تسجيل الدخول';
+                regFields.style.display = 'none';
+                toggleText.innerText = 'ليس لديك حساب؟';
+            }
+        }
+    </script>
+</body>
+</html>
