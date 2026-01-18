@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>حجز طيران - واصل</title>
+</head>
+<body>
+    <div class="main-frame">
+        <h2 style="color:var(--gold)">حجز تذاكر طيران</h2>
+        <div style="margin-bottom:20px;">
+            <label><input type="radio" name="trip" checked> ذهاب فقط</label>
+            <label style="margin-right:20px;"><input type="radio" name="trip"> ذهاب وعودة (اختياري)</label>
+        </div>
+        
+        <input type="text" placeholder="من (مطار الإقلاع)">
+        <input type="text" placeholder="إلى (وجهة الوصول)">
+        <input type="date" placeholder="تاريخ السفر">
+        <input type="number" placeholder="عدد المسافرين">
+        <input type="tel" placeholder="رقم الهاتف للتواصل">
+        
+        <button class="book-btn" onclick="confirmFlight()">تأكيد الطلب</button>
+        
+        <p id="msg" style="display:none; color:var(--gold); margin-top:20px; border:1px solid; padding:10px;">
+            سيتم التواصل معكم عند إتمام الحجز لسداد قيمة التذكرة واستلامها.
+        </p>
+    </div>
+    <script>
+        function confirmFlight() {
+            document.getElementById('msg').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
