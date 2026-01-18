@@ -5,82 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASEL | واصل</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; overflow-x: hidden; }
+        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; }
         .header-nav { display: flex; justify-content: flex-end; padding: 15px; gap: 20px; }
         .header-nav span { color: #d4af37; font-weight: bold; cursor: pointer; font-size: 14px; }
-        .main-container { padding: 15px; border: 2px solid #d4af37; margin: 15px; border-radius: 15px; background: #000; }
-        .logo-img { width: 100px; margin-bottom: 20px; }
+        .main-container { padding: 15px; border: 2px solid #d4af37; margin: 15px; border-radius: 15px; }
+        .logo-img { width: 120px; margin-bottom: 10px; }
         
-        /* تظبيط المربعات 2 في كل صف */
+        /* تظبيط المربعات تكون جنب بعض ومنظمة */
         .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
-        .service-card { border: 1px solid #d4af37; padding: 15px; border-radius: 12px; cursor: pointer; transition: 0.3s; }
-        .service-card:active { transform: scale(0.95); }
-        .service-card img { width: 50%; max-width: 55px; margin-bottom: 10px; }
-        .service-card div { color: #d4af37; font-weight: bold; font-size: 13px; }
+        .services-grid a { text-decoration: none; color: inherit; }
+        .service-card { border: 1px solid #d4af37; padding: 15px; border-radius: 12px; background: #050505; }
+        .service-card img { width: 50px; height: auto; margin-bottom: 8px; }
+        .service-card div { color: #fff; font-weight: bold; font-size: 14px; }
 
-        /* السوشيال ميديا */
-        .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
-        .social-icons img { width: 28px; height: 28px; }
-
-        /* نافذة الحجز */
-        .booking-modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-                         width: 85%; background: #111; border: 2px solid #d4af37; border-radius: 15px; padding: 20px; z-index: 1000; }
-        .booking-modal h3 { color: #d4af37; margin-bottom: 15px; font-size: 18px; }
-        .booking-modal input, .booking-modal select { width: 95%; padding: 10px; margin: 5px 0; background: #000; border: 1px solid #d4af37; color: #fff; border-radius: 5px; }
-        .booking-modal button { background: #d4af37; color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; margin-top: 10px; width: 100%; }
-        .overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:999; }
+        /* تظبيط مقاس أيقونات السوشيال ميديا (مهم جداً) */
+        .social-icons { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
+        .social-icons img { width: 35px; height: 35px; }
     </style>
 </head>
 <body>
-
     <div class="header-nav">
         <span>تسجيل دخول</span>
         <span>إنشاء حساب</span>
     </div>
 
-    <div class="main-container">
-        <img src="assets/logo.png" alt="Wasel Logo" class="logo-img">
-        <h1>مرحباً بكم في واصل</h1>
-        <p style="color:#aaa; font-size:12px;">بوابتك الفاخرة لخدمات الحجز المتكاملة</p>
+<div class="main-container">
+    <img src="assets/logo.png" alt="Wasel Logo" class="logo-img">
+    <h1>مرحباً بكم في واصل</h1>
+    <p style="font-size: 13px; color: #ccc;">بوابتك الفاخرة لخدمات الحجز المتكاملة</p>
 
-        <div class="services-grid">
-            <div class="service-card" onclick="openBooking('فنادق')"><img src="assets/hotel.png"><div>فنادق</div></div>
-            <div class="service-card" onclick="openBooking('طيران')"><img src="assets/air.png"><div>طيران</div></div>
-            <div class="service-card" onclick="openBooking('قطارات')"><img src="assets/train.png"><div>قطارات</div></div>
-            <div class="service-card" onclick="openBooking('أتوبيس')"><img src="assets/bus.png"><div>أتوبيس</div></div>
-            <div class="service-card" onclick="openBooking('ليموزين')"><img src="assets/car.png"><div>ليموزين</div></div>
-            <div class="service-card" onclick="openBooking('مباريات')"><img src="assets/match.png"><div>مباريات</div></div>
-        </div>
-
-        <div class="social-icons">
-            <a href="#"><img src="assets/facebook.png"></a>
-            <a href="#"><img src="assets/instagram.png"></a>
-            <a href="#"><img src="assets/tiktok.png"></a>
-            <a href="#"><img src="assets/telegram.png"></a>
-        </div>
+    <div class="services-grid">
+        <a href="hotel-booking.html">
+            <div class="service-card"><img src="assets/hotel.png"><div>فنادق</div></div>
+        </a>
+        <a href="flight-booking.html">
+            <div class="service-card"><img src="assets/air.png"><div>طيران</div></div>
+        </a>
+        <a href="train-booking.html">
+            <div class="service-card"><img src="assets/train.png"><div>قطارات</div></div>
+        </a>
+        <a href="bus-booking.html">
+            <div class="service-card"><img src="assets/bus.png"><div>أتوبيس</div></div>
+        </a>
+        <a href="car-booking.html">
+            <div class="service-card"><img src="assets/car.png"><div>ليموزين</div></div>
+        </a>
+        <a href="match-booking.html">
+            <div class="service-card"><img src="assets/match.png"><div>مباريات</div></div>
+        </a>
     </div>
 
-    <div id="overlay" class="overlay" onclick="closeBooking()"></div>
-    <div id="bookingModal" class="booking-modal">
-        <h3 id="serviceTitle"></h3>
-        <input type="text" placeholder="الاسم بالكامل">
-        <input type="tel" placeholder="رقم الموبايل">
-        <div id="dynamicFields"></div>
-        <button onclick="sendOrder()">تأكيد الطلب</button>
-        <div onclick="closeBooking()" style="color:#777; margin-top:10px; cursor:pointer; font-size:12px;">إلغاء</div>
+    <div class="social-icons">
+        <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/tiktok.png" alt="TikTok"></a>
+        <a href="#"><img src="assets/telegram.png" alt="Telegram"></a>
     </div>
-
-    <script>
-        function openBooking(service) {
-            document.getElementById('bookingModal').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('serviceTitle').innerText = 'حجز ' + service;
-            let fields = document.getElementById('dynamicFields');
-            fields.innerHTML = '';
-
-            if (service === 'فنادق') {
-                fields.innerHTML = '<input type="text" placeholder="اسم الفندق أو المدينة"><input type="date" placeholder="تاريخ الدخول"><input type="number" placeholder="عدد الليالي"><input type="number" placeholder="عدد الأفراد">';
-            } else if (service === 'طيران' || service === 'أتوبيس' || service === 'قطارات') {
-                fields.innerHTML = '<input type="text" placeholder="من (نقطة الانطلاق)"><input type="text" placeholder="إلى (الوجهة)"><input type="date" placeholder="تاريخ السفر"><select><option>ذهاب فقط</option><option>ذهاب وعودة</option></select>';
-            } else if (service === 'ليموزين') {
-                fields.innerHTML = '<input type="text" placeholder="مكان الاستلام"><input type="text" placeholder="الوجهة"><input type="datetime-local" placeholder="موعد الحجز">';
+</div>
+</body>
+</html>
