@@ -22,7 +22,7 @@
         }
         .header-nav span:hover { transform: scale(1.1); text-shadow: 0 0 15px #d4af37; }
 
-        /* حاوية التصميم اللي في صورتك */
+        /* حاوية التصميم */
         .main-container {
             max-width: 1000px; margin: 20px auto; border: 2px solid #d4af37;
             border-radius: 20px; padding: 20px; text-align: center;
@@ -62,88 +62,4 @@
             background: #000; border: 1px solid #d4af37; color: #fff; border-radius: 5px;
         }
         .modal button {
-            width: 100%; padding: 10px; background: #d4af37; color: #000;
-            border: none; font-weight: bold; cursor: pointer; border-radius: 5px;
-        }
-        .close-btn { color: #fff; font-size: 12px; cursor: pointer; margin-top: 10px; display: block; }
-    </style>
-</head>
-<body>
-
-    <div class="header-nav">
-        <span onclick="toggleModal('loginModal', true)">تسجيل دخول</span>
-        <span onclick="toggleModal('registerModal', true)">إنشاء حساب</span>
-    </div>
-
-    <div class="main-container">
-        <img src="https://via.placeholder.com/150x50/000000/d4af37?text=WASEL" class="logo-img" alt="واصل">
-        <h1 class="hero-title">مرحباً بكم في واصل</h1>
-        <p class="hero-subtitle">بوابتك الفاخرة لخدمات الحجز المتكاملة</p>
-
-        <div class="services-grid">
-            <div class="service-card"><img><h4>طيران</h4><button>احجز الآن</button></div>
-            <div class="service-card"><img><h4>فنادق</h4><button>احجز الآن</button></div>
-            <div class="service-card"><img><h4>قطارات</h4><button>احجز الآن</button></div>
-            <div class="service-card"><img><h4>أتوبيس</h4><button>احجز الآن</button></div>
-            <div class="service-card"><img><h4>ليموزين</h4><button>احجز الآن</button></div>
-            <div class="service-card"><img><h4>مباريات</h4><button>احجز الآن</button></div>
-        </div>
-    </div>
-
-    <div id="registerModal" class="modal">
-        <h3 style="color:#d4af37">حساب جديد</h3>
-        <input type="text" id="regName" placeholder="الاسم بالكامل">
-        <input type="email" id="regEmail" placeholder="البريد الإلكتروني">
-        <input type="password" id="regPass" placeholder="كلمة المرور">
-        <input type="password" id="regConfirm" placeholder="تأكيد كلمة المرور">
-        <button id="btnRegister">تأكيد التسجيل</button>
-        <span class="close-btn" onclick="toggleModal('registerModal', false)">إغلاق</span>
-    </div>
-
-    <div id="loginModal" class="modal">
-        <h3 style="color:#d4af37">تسجيل دخول</h3>
-        <input type="email" id="loginEmail" placeholder="الإيميل">
-        <input type="password" id="loginPass" placeholder="الباسورد">
-        <button id="btnLogin">دخول</button>
-        <span class="close-btn" onclick="toggleModal('loginModal', false)">إغلاق</span>
-    </div>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyDpgNixBA7K5AmVVsnWRsAKxuBZjVqKeKA",
-            authDomain: "wasel-ff1c1.firebaseapp.com",
-            projectId: "wasel-ff1c1",
-            storageBucket: "wasel-ff1c1.firebasestorage.app",
-            messagingSenderId: "865070117895",
-            appId: "1:865070117895:web:17f64b682297c7362a26a2"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        window.toggleModal = (id, show) => {
-            document.getElementById(id).style.display = show ? 'block' : 'none';
-        };
-
-        document.getElementById('btnRegister').onclick = async () => {
-            const email = document.getElementById('regEmail').value;
-            const pass = document.getElementById('regPass').value;
-            const confirm = document.getElementById('regConfirm').value;
-
-            if (pass !== confirm) { alert("كلمة المرور غير متطابقة!"); return; }
-
-            try {
-                await setDoc(doc(db, "users", email), {
-                    name: document.getElementById('regName').value,
-                    email: email, password: pass
-                });
-                alert("تم التسجيل بنجاح!");
-                toggleModal('registerModal', false);
-            } catch (e) { alert("خطأ: " + e.message); }
-        };
-    </script>
-</body>
-</html>
+            width: 100%; padding: 1
