@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز أتوبيس - واصـل</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .booking-container {
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 15px #d4af37;
+            padding: 30px;
+            width: 90%;
+            max-width: 550px;
+            border-radius: 15px;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .header { text-align: center; margin-bottom: 25px; }
+        .header img { width: 70px; }
+        h2 { color: #d4af37; text-align: center; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #d4af37; font-weight: bold; }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+            background: #111;
+            color: #fff;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .company-choice {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .company-choice label {
+            flex: 1;
+            border: 1px solid #d4af37;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .company-choice input { display: none; }
+        .company-choice input:checked + span {
+            background-color: #d4af37;
+            color: #000;
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-confirm {
+            width: 100%;
+            padding: 15px;
+            background-color: #d4af37;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-confirm:hover { background-color: #fff; box-shadow: 0 0 15px #fff; }
+    </style>
+</head>
+<body>
+
+<div class="booking-container">
+    <div class="header">
+        <img src="assets/bus.png" alt="Bus">
+        <h2>حجز رحلات الأتوبيس</h2>
+    </div>
+
+    <form>
+        <label style="color:#d4af37; display:block; margin-bottom:10px;">اختر شركة النقل</label>
+        <div class="company-choice">
+            <label>
+                <input type="radio" name="company" value="superjet" checked>
+                <span>سوبر جيت</span>
+            </label>
+            <label>
+                <input type="radio" name="company" value="gobus">
+                <span>جو باص</span>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>محافظة القيام</label>
+            <select id="city-from">
+                <option>القاهرة</option>
+                <option>الإسكندرية</option>
+                <option>شرم الشيخ</option>
+                <option>الغردقة</option>
+                <option>الأقصر</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>موقف التحرك (حسب الشركة المختار)</label>
+            <select id="station-from">
+                <optgroup label="مواقف القاهرة">
+                    <option>موقف عبد المنعم رياض</option>
+                    <option>موقف ألماظة (مصر الجديدة)</option>
+                    <option>موقف القللي</option>
+                    <option>موقف التجمع الخامس</option>
+                    <option>موقف نادي السكة</option>
+                </optgroup>
+                <optgroup label="مواقف الإسكندرية">
+                    <option>موقف محرم بك</option>
+                    <option>موقف سيدي جابر</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>جهة الوصول</label>
+            <select>
+                <option>الإسكندرية</option>
+                <option>الساحل الشمالي</option>
+                <option>مرسى مطروح</option>
+                <option>دهب</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>تاريخ السفر</label>
+            <input type="date">
+        </div>
+
+        <div class="form-group">
+            <label>نوع الخدمة</label>
+            <select>
+                <option>اقتصادي</option>
+                <option>ديلاكس (مكيف)</option>
+                <option>إليت (VIP)</option>
+                <option>بزنس كلاس</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-confirm">البحث عن أتوبيس</button>
+    </form>
+</div>
+
+</body>
+</html>
