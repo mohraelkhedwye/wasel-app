@@ -4,68 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WASEL | واصل</title>
-        <style>
-    body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; }
-    .header-nav { display: flex; justify-content: flex-end; padding: 15px; gap: 20px; }
-    .header-nav span { color: #d4af37; font-weight: bold; font-size: 13px; }
-    
-    .main-container { padding: 10px; margin: 10px; border: none; }
-    .logo-img { width: 110px; margin-bottom: 10px; }
-
-    .services-grid { 
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px; 
-        padding: 15px; 
-    }
-    .services-grid a { text-decoration: none; }
-
-    /* ده التعديل اللي هيجيب لك شكل صورة Book Now بالظبط */
-    /* تنسيق الكارت (خلفية الأيقونة السوداء المضيئة) */
-.service-card {
-    background: #000;
-    border: 1px solid #d4af37;
-    border-radius: 20px;
-    padding: 20px 10px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); /* هذا هو السواد المضيء */
-    transition: 0.3s;
+        /* حاوية الخدمة بالكامل */
+.service-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* المسافة بين المربع والزرار */
 }
 
-/* تنسيق زر "احجز الآن" الذهبي اللامع */
-.book-now-btn {
-    background: linear-gradient(180deg, #f9e2a8 0%, #d4af37 50%, #b38728 100%);
-    color: #000;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 10px;
+/* المربع الأسود المضيء اللي ورا الأيقونة */
+.icon-box {
+    background: #000; /* أسود صريح */
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid #d4af37; /* برواز ذهبي رفيع */
+    /* التوهج الذهبي اللي بيخلي الأسود يلمع */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); 
+}
+
+.icon-box img {
+    width: 50px;
+    height: 50px;
+}
+
+/* اسم الخدمة */
+.service-title {
+    color: #fff;
     font-weight: bold;
     font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    margin-top: 15px;
-    display: inline-block;
-    text-decoration: none;
 }
 
-/* تنسيق الأيقونة والاسم */
-.service-card img { width: 60px; height: 60px; margin-bottom: 10px; }
-.service-card div { color: #fff; font-size: 16px; margin-bottom: 10px; }
+/* زر اطلب الآن الذهبي اللامع */
+.order-btn {
+    background: linear-gradient(180deg, #f9e2a8 0%, #d4af37 50%, #b38728 100%);
+    color: #000 !important;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border: none;
+    width: 100px; /* عشان يبقى شكل الزرار ثابت */
+    text-align: center;
+}
 
-
-
-    /* حركة لما تلمس الزرار يزود التوهج */
-    .service-card:active {
-        transform: scale(0.95);
-        box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
-    }
-
-    .service-card img { width: 55px; height: auto; margin-bottom: 12px; }
-    .service-card div { color: #d4af37; font-weight: bold; font-size: 16px; letter-spacing: 1px; }
-
-    .social-icons { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
-    .social-icons img { width: 32px; }
-</style>
 
 </head>
 <body>
